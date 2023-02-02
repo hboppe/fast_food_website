@@ -1,4 +1,5 @@
 import CartProduct from "../CartProduct"
+import CartTotal from "../CartTotal"
 import Aside from "./style"
 
 function Cart({cart, setCart}){
@@ -15,7 +16,11 @@ function Cart({cart, setCart}){
                 <p>Adicione itens</p>
             </div>) : 
             
-            (<ul className="cartList">{cart.map(product => <CartProduct key={product.id} product={product} setCart={setCart}/>)}</ul>)
+            (<>
+                <ul className="cartList">{cart.map(product => <CartProduct key={product.id} product={product} setCart={setCart}/>)}</ul>
+            
+                <CartTotal cart={cart}/>
+            </>)
 
             }
         </Aside>
