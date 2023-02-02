@@ -1,9 +1,14 @@
-import Button from "../Button";
 import {Li, ImageContainer} from "./style";
 
 
-function Product({product:{name, img, category, price}}){
-    console.log(img)
+function Product({product:{name, img, category, price, id}, setCart, products}){
+
+    function handleClick(){
+        const selectedProduct = products.find(product => product.id === id);
+
+        setCart((oldValues) => [...oldValues, selectedProduct])
+    }
+    
     return (
         <Li>
             
@@ -13,7 +18,7 @@ function Product({product:{name, img, category, price}}){
                 <h3>{name}</h3>
                 <small>{category}</small>
                 <p>R$ {price.toFixed(2)}</p>
-                <Button>Adicionar</Button>
+                <button onClick={handleClick}>Adicionar</button>
             </div>
 
         </Li>

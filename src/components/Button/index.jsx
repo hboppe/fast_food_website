@@ -1,9 +1,14 @@
 import StyledButton from './style.js'
 
-function Button ({children}){
+function Button ({children, onClick}){
+
+    function handleClick(){
+        console.log('oieeeee')
+        onClick()
+    }
 
     return (
-        <StyledButton>{children}</StyledButton>
+        <StyledButton onClick={onClick}>{children}</StyledButton>
     )
 }
 

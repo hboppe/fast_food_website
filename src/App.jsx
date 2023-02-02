@@ -7,6 +7,7 @@ import ProductList from './components/ProductList'
 
 function App() {
   const [products, setProducts] = useState();
+  const [cart, setCart] = useState([]);
 
   useEffect( () => {
     
@@ -29,7 +30,7 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      {products !== undefined && <ProductList products={products}/>}
+      {products !== undefined && <ProductList products={products} setCart={setCart} cart={cart}/>}
     </div>
   )
 }

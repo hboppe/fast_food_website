@@ -5,6 +5,10 @@ const Li = styled.li`
     min-width: 300px;
     border-radius: 8px;
 
+    &:hover {
+        border: 2px solid var(--grey-100);
+    }
+
     .imageContainer{
         background-color: var(--grey-0);
     }
@@ -18,11 +22,22 @@ const Li = styled.li`
 
     .productInfo > button {
         width: fit-content;
-        margin-top: 0.625rem;
+        margin-top: 0.625rem; 
+        background-color: var(--color-primary);
+        font-size: var(--font-size-h4);
+        padding: 0.7188rem 1.25rem;
+        border: none;
+        color: #FFFFFF;
+        font-weight: 500;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: .5s ease-in-out;
+
     }
 
-    &:hover {
-        border: 2px solid var(--grey-100);
+    .productInfo > button:hover {
+        background-color: var(--color-primary-50);
+        text-shadow: 1px 1px #00000036;
     }
 
 `
