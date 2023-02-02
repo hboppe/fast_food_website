@@ -15,7 +15,7 @@ function Cart({cart, setCart}){
                 <p>Adicione itens</p>
             </div>) : 
             
-            (<ul className="cartList">{cart.map(product => <CartProduct key={product.id} product={product}/>)}</ul>)
+            (<ul className="cartList">{cart.map(product => <CartProduct key={product.id} product={product} setCart={setCart}/>)}</ul>)
 
             }
         </Aside>

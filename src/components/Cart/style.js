@@ -3,6 +3,7 @@ import styled from "styled-components";
 const Aside = styled.aside`
     margin: 1rem;
     border-radius: 8px;
+    min-width: 382px;
 
     .cartTitle {
         background-color: var(--color-primary);
@@ -20,6 +21,14 @@ const Aside = styled.aside`
         align-items: center;
         gap: 1rem;
         border-radius: 0px 0px 8px 8px;
+    }
+
+    .cartList{
+        padding: 20px 18px;
+        background-color: var(--grey-0);
+        display: flex;
+        flex-direction: column;
+        gap: 21px;
     }
 `
 

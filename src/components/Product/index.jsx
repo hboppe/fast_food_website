@@ -17,7 +17,7 @@ function Product({product:{name, img, category, price, id}, setCart, products}){
             <div className="productInfo">
                 <h3>{name}</h3>
                 <small>{category}</small>
-                <p>R$ {price.toFixed(2)}</p>
+                <p>R$ {price}</p>
                 <button onClick={handleClick}>Adicionar</button>
             </div>
 
