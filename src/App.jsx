@@ -1,7 +1,9 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react'
+import { Cart } from './components/Cart';
 import Header from './components/Header'
 import ProductList from './components/ProductList'
+import Main from './styles/style';
 
 
 
@@ -30,7 +32,11 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      {products !== undefined && <ProductList products={products} setCart={setCart} cart={cart}/>}
+
+      <Main>
+        {products !== undefined && <ProductList products={products} setCart={setCart} cart={cart}/>}
+        <Cart/>
+      </Main>
     </div>
   )
 }
