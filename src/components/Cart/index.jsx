@@ -19,7 +19,7 @@ function Cart({cart, setCart}){
             (<>
                 <ul className="cartList">{cart.map(product => <CartProduct key={product.id} product={product} setCart={setCart}/>)}</ul>
             
-                <CartTotal cart={cart}/>
+                <CartTotal cart={cart} setCart={setCart}/>
             </>)
 
             }
