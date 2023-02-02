@@ -21,9 +21,6 @@ function App() {
 
     } catch(error){
       console.log(error)
-    } finally {
-      console.log(products)
-
     }
       
     })()
@@ -35,7 +32,7 @@ function App() {
 
       <Main>
         {products !== undefined && <ProductList products={products} setCart={setCart} cart={cart}/>}
-        <Cart/>
+        <Cart cart={cart} setCart={setCart}/>
       </Main>
     </div>
   )

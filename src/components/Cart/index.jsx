@@ -1,16 +1,27 @@
+import CartProduct from "../CartProduct"
 import Aside from "./style"
 
-function Cart(){
+function Cart({cart, setCart}){
+
+    console.log(cart)
+
     return (
         <Aside>
             <h3 className="cartTitle">Carrinho de compras</h3>
 
-            <div className="emptyCartWarning">
+            {cart.length === 0 ? 
+            (<div className="emptyCartWarning">
                 <h3>Sua sacola está vazia</h3>
                 <p>Adicione itens</p>
-            </div>
+            </div>) : 
+            
+            (<ul className="cartList">{cart.map(product => <CartProduct key={product.id} product={product}/>)}</ul>)
+
+            }
         </Aside>
     )
 }
 
 export {Cart}
+
+// {cart.map(product => <CartProduct key={product.id} product={product})}
