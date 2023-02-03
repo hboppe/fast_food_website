@@ -13,7 +13,7 @@ const Total = styled.div`
         background-color: var(--grey-20);
     }
 
-    .totalContainer:first-child {
+    .totalContainer > span:first-child {
         color: var(--grey-100);
     }
 
@@ -33,6 +33,12 @@ const Total = styled.div`
         border-radius: 8px;
         cursor: pointer;
         background-color: var(--grey-20);
+        transition: .5s ease-in-out;
+    }
+
+    button:hover {
+        background-color: var(--grey-50);
+        color: var(--grey-20);
     }
 
     
