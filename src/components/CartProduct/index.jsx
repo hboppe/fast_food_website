@@ -3,17 +3,40 @@ import Li from "./style";
 
 function CartProduct({product, setCart, cart}){
 
-    const [quantity, setQuantity] = useState(product.quantity)
+    function removeProduct(){
 
-    function handleClick(id){
+        setCart((oldValues) => [...oldValues.filter((item) => item.id !== product.id)])
+    }
 
-        // const productQuantity = cart.filter(product => product.id === id);
+    function decreaseProductQuantity(){
 
-        // useEffect(() => {
+        if(product.quantity === 1) {
 
-        // },[cart])
+            setCart([...cart.filter(item => item.id !== product.id)])
+        } else {
+            const updatedItemQuantityList = cart.map(item => {
+                if(item.id === product.id) {
+                    item.quantity--
+                }
+    
+                return item
+            })
 
-        setCart((oldValues) => [...oldValues.filter((product) => product.id !== id)])
+            setCart(updatedItemQuantityList)
+        }
+        
+    }
+
+    function increaseProductQuantity(){
+        const updatedItemQuantityList = cart.map(item => {
+            if(item.id === product.id) {
+                item.quantity++
+            }
+
+            return item;
+        })
+
+        setCart(updatedItemQuantityList)
     }
 
     return (
@@ -25,11 +48,11 @@ function CartProduct({product, setCart, cart}){
                     <small>{product.category}</small>
                 </div>
                 <div className="productQuantityContainer">
-                    <button>-</button>
+                    <button onClick={decreaseProductQuantity}>-</button>
                     <span>{product.quantity}</span>
-                    <button>+</button>
+                    <button onClick={increaseProductQuantity}>+</button>
                 </div>
-                <button className="removeButton" onClick={() => handleClick(product.id)}>Remover</button>
+                <button className="removeButton" onClick={() => removeProduct()}>Remover</button>
             </div>
         </Li>
     )
