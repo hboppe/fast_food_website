@@ -10,9 +10,11 @@ import Main from './styles/style';
 function App() {
   const [products, setProducts] = useState();
   const [cart, setCart] = useState([]);
+  const [input, setInput] = useState('')
 
   useEffect( () => {
-    
+
+  // API useEffect
   (async function() {
     try{
       const productsRequest =  await axios.get('https://hamburgueria-kenzie-json-serve.herokuapp.com/products');
@@ -28,10 +30,10 @@ function App() {
 
   return (
     <div className="App">
-      <Header/>
+      <Header input={input} setInput={setInput}/>
 
       <Main>
-        {products !== undefined && <ProductList products={products} setCart={setCart} cart={cart}/>}
+        {products !== undefined && <ProductList input={input} products={products} setCart={setCart} cart={cart}/>}
         <Cart cart={cart} setCart={setCart}/>
       </Main>
     </div>

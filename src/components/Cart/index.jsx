@@ -4,8 +4,6 @@ import Aside from "./style"
 
 function Cart({cart, setCart}){
 
-    console.log(cart)
-
     return (
         <Aside>
             <h3 className="cartTitle">Carrinho de compras</h3>
@@ -17,7 +15,7 @@ function Cart({cart, setCart}){
             </div>) : 
             
             (<>
-                <ul className="cartList">{cart.map(product => <CartProduct key={product.id} product={product} setCart={setCart}/>)}</ul>
+                <ul className="cartList">{cart.map(product => <CartProduct key={product.id} product={product} setCart={setCart} cart={cart}/>)}</ul>
             
                 <CartTotal cart={cart} setCart={setCart}/>
             </>)

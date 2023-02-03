@@ -4,12 +4,14 @@ import { StyledHeader } from "./style";
 
 
 
-function  Header(){
+function  Header({input, setInput}){
+
+
     return (
         
         <StyledHeader>
             <Logo/>
-            <InputSearch/>
+            <InputSearch input={input} setInput={setInput}/>
         </StyledHeader>
             
     )

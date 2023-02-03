@@ -1,24 +1,50 @@
+import { useEffect } from "react";
 import {Li, ImageContainer} from "./style";
 
 
-function Product({product:{name, img, category, price, id}, setCart, products}){
+function Product({product, setCart, cart}){
 
-    function handleClick(){
-        const selectedProduct = products.find(product => product.id === id);
+    function addProductToCart(){
 
-        setCart((oldValues) => [...oldValues, selectedProduct])
+        if(cart.some(item => item.id === product.id)){
+            
+            const newCart = cart.map((item) => {
+
+                if(item.id === product.id){
+                    item.quantity = item.quantity + 1;
+                    // console.log(item)
+                } 
+                return item;
+
+            })
+            setCart(newCart)
+
+        } else {
+            const newProduct = {...product, quantity: 1}
+            setCart((oldValues) => [...oldValues, newProduct])
+            console.log(cart)
+
+        }
+
+
     }
+
+    // useEffect(() => {
+    //     console.log(cart)
+    // },[cart])
+
+    
     
     return (
         <Li>
             
-            <ImageContainer img={img}/>
+            <ImageContainer img={product.img}/>
            
             <div className="productInfo">
-                <h3>{name}</h3>
-                <small>{category}</small>
-                <p>R$ {price.toFixed(2)}</p>
-                <button onClick={handleClick}>Adicionar</button>
+                <h3>{product.name}</h3>
+                <small>{product.category}</small>
+                <p>R$ {product.price.toFixed(2)}</p>
+                <button onClick={addProductToCart}>Adicionar</button>
             </div>
 
         </Li>

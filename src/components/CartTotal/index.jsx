@@ -4,8 +4,18 @@ import { useState, useEffect } from "react";
 function CartTotal({cart, setCart}) {
     const [totalCart, setTotalCart] = useState(0);
 
+    function makeNewItem(quantity, price){
+        return {
+            quantity,
+            price
+        }
+    }
+
     useEffect(()=> {
-        setTotalCart(cart.reduce((acc, item) => acc + item.price, 0))
+        const totalArray = cart.map(item => makeNewItem(item.quantity, item.price)).map(item => item.quantity * item.price);
+
+        setTotalCart(totalArray.reduce((acc, item) => acc + item, 0));
+        
     },[cart])
 
     function handleClick(){

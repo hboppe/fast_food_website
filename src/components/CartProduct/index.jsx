@@ -1,22 +1,35 @@
+import { useEffect, useState } from "react";
 import Li from "./style";
 
-function CartProduct({product:{name, id, img, category}, setCart}){
+function CartProduct({product, setCart, cart}){
 
-    function handleClick(){
-       
+    const [quantity, setQuantity] = useState(product.quantity)
+
+    function handleClick(id){
+
+        // const productQuantity = cart.filter(product => product.id === id);
+
+        // useEffect(() => {
+
+        // },[cart])
+
         setCart((oldValues) => [...oldValues.filter((product) => product.id !== id)])
-        console.log(id)
     }
 
     return (
         <Li>
-            <img src={img} alt={name} />
+            <img src={product.img} alt={product.name} />
             <div className="productInfoContainer">
                 <div>
-                    <h3>{name}</h3>
-                    <small>{category}</small>
+                    <h3>{product.name}</h3>
+                    <small>{product.category}</small>
                 </div>
-                <button className="removeButton" onClick={handleClick}>Remover</button>
+                <div className="productQuantityContainer">
+                    <button>-</button>
+                    <span>{product.quantity}</span>
+                    <button>+</button>
+                </div>
+                <button className="removeButton" onClick={() => handleClick(product.id)}>Remover</button>
             </div>
         </Li>
     )
