@@ -30,6 +30,27 @@ const Li = styled.li`
         text-decoration: underline;
     }
 
+    .productQuantityContainer {
+        width: 65px;
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+    }
+
+    .productQuantityContainer > button {
+        padding: 0px 3px;
+        font-weight: bold;
+        cursor: pointer;
+        border: 2px solid var(--grey-20);
+        background-color: var(--grey-20);
+        color: var(--grey-50);
+    }
+
+    .quantityAndRemoveContainer {
+        display: flex;
+        gap: 40px;
+    }
+
 `
 
 export default Li;

@@ -47,12 +47,16 @@ function CartProduct({product, setCart, cart}){
                     <h3>{product.name}</h3>
                     <small>{product.category}</small>
                 </div>
-                <div className="productQuantityContainer">
-                    <button onClick={decreaseProductQuantity}>-</button>
-                    <span>{product.quantity}</span>
-                    <button onClick={increaseProductQuantity}>+</button>
+                <div className="quantityAndRemoveContainer">
+                    <div className="productQuantityContainer">
+                        <button onClick={decreaseProductQuantity}>-</button>
+                        <span>{product.quantity}</span>
+                        <button onClick={increaseProductQuantity}>+</button>
+                    </div>
+                    <button className="removeButton" onClick={() => removeProduct()}>Remover</button>
+
                 </div>
-                <button className="removeButton" onClick={() => removeProduct()}>Remover</button>
+                
             </div>
         </Li>
     )
