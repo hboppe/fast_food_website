@@ -1,8 +1,13 @@
 import logo from '../../assets/logo.svg'
+import StyledLogo from './style';
 
 function Logo(){
+
     return (
-        <img src={logo} alt="Burguer Kenzie" />
+        <StyledLogo onClick={() => window.location.reload()}>
+            <img src={logo} alt="Burguer Kenzie" />
+        </StyledLogo>
+        
     )
 
 }

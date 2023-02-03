@@ -8,25 +8,30 @@ import Main from './styles/style';
 
 
 function App() {
+  const localStorageCart = localStorage.getItem('@BurguerKenzie:cart');
   const [products, setProducts] = useState();
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(JSON.parse(localStorageCart));
   const [input, setInput] = useState('')
 
   useEffect( () => {
 
-  // API useEffect
-  (async function() {
-    try{
-      const productsRequest =  await axios.get('https://hamburgueria-kenzie-json-serve.herokuapp.com/products');
+    (async function() {
+      try{
+        const productsRequest =  await axios.get('https://hamburgueria-kenzie-json-serve.herokuapp.com/products');
 
-      setProducts(productsRequest.data)
+        setProducts(productsRequest.data)
 
-    } catch(error){
-      console.log(error)
-    }
-      
+      } catch(error){
+        console.log(error)
+      }
+        
     })()
   }, [])
+
+  useEffect(() => {
+    localStorage.setItem('@BurguerKenzie:cart', JSON.stringify(cart))
+    console.log(localStorageCart)
+  },[cart])
 
   return (
     <div className="App">

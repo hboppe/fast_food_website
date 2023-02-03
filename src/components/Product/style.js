@@ -20,6 +20,16 @@ const Li = styled.li`
         gap: 0.625rem;
     }
 
+    .productInfo > small {
+        color: var(--grey-50);
+        font-size: var(--font-size-caption);
+    }
+
+    .productInfo > p{
+        color: var(--color-primary);
+        font-weight: 600;
+    }
+
     .productInfo > button {
         width: fit-content;
         margin-top: 0.625rem; 
@@ -50,6 +60,7 @@ const ImageContainer = styled.div`
     background-color: var(--grey-20);
     background-size: contain;
     background-size: auto;
+    border-radius: 5px;
 
 `
 
