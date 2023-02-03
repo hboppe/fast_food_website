@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 const Aside = styled.aside`
-    margin: 1rem;
     border-radius: 8px;
     min-width: 382px;
+    max-width: 465px;
+    margin: 1rem auto;
 
     .cartTitle {
         background-color: var(--color-primary);
@@ -30,6 +31,8 @@ const Aside = styled.aside`
         flex-direction: column;
         gap: 21px;
     }
+
+    
 `
 
 export default Aside;
