@@ -43,7 +43,7 @@ function CartProduct({product, setCart, cart}){
         <Li>
             <img src={product.img} alt={product.name} />
             <div className="productInfoContainer">
-                <div>
+                <div className="nameAndCategoryContainer">
                     <h3>{product.name}</h3>
                     <small>{product.category}</small>
                 </div>

@@ -16,7 +16,7 @@ const Li = styled.li`
         display: flex;
         width: calc(100% - 70px);
         justify-content: space-between;
-        align-items: flex-start;
+        align-items: baseline;
     }
 
     button.removeButton {
@@ -28,6 +28,17 @@ const Li = styled.li`
     
     button.removeButton:hover {
         text-decoration: underline;
+    }
+
+    .nameAndCategoryContainer {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .nameAndCategoryContainer > small {
+        color: var(--grey-50);
     }
 
     .productQuantityContainer {
