@@ -8,6 +8,11 @@ const List = styled.ul`
     ::-webkit-scrollbar {
         height: 0px;
     }
+
+    @media (min-width: 1200px){
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 `
 
 export default List

@@ -4,6 +4,7 @@ const Li = styled.li`
     border: 2px solid var(--grey-20);
     min-width: 300px;
     border-radius: 8px;
+    height: fit-content;
 
     &:hover {
         border: 2px solid var(--grey-100);

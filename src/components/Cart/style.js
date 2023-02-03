@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Aside = styled.aside`
     border-radius: 8px;
-    min-width: 382px;
+    min-width: 415px;
     max-width: 465px;
     margin: 1rem auto;
 
@@ -32,6 +32,11 @@ const Aside = styled.aside`
         gap: 21px;
     }
 
+    @media (min-width: 1200px){
+        width: 410px;
+        margin-top: 0;
+        margin-right: 2rem;
+    }
     
 `
 
