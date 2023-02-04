@@ -6,8 +6,6 @@ import List from "./style"
 function ProductList({products, setCart, cart, input}){
     const [list, setList] = useState(products);
 
-    // console.log(products.filter(product => product.name.includes(input)))
-
     useEffect(() => {
         const filteredProducts = products.filter(product => product.name.toLowerCase().includes(input.toLowerCase()));
         

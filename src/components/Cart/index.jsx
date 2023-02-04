@@ -26,5 +26,3 @@ function Cart({cart, setCart}){
 }
 
 export {Cart}
-
-// {cart.map(product => <CartProduct key={product.id} product={product})}

@@ -10,7 +10,7 @@ import Main from './styles/style';
 function App() {
   const localStorageCart = localStorage.getItem('@BurguerKenzie:cart');
   const [products, setProducts] = useState();
-  const [cart, setCart] = useState(JSON.parse(localStorageCart));
+  const [cart, setCart] = useState(JSON.parse(localStorageCart) || []);
   const [input, setInput] = useState('')
 
   useEffect( () => {
@@ -30,7 +30,7 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem('@BurguerKenzie:cart', JSON.stringify(cart))
-    console.log(localStorageCart)
+
   },[cart])
 
   return (

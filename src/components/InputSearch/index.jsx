@@ -1,7 +1,5 @@
-import { useState } from 'react';
 import Button from '../Button';
 import {Input, Div} from './style'
-
 
 function InputSearch({input, setInput}){
 

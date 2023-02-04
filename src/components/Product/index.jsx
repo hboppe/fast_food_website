@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import {Li, ImageContainer} from "./style";
 
 
@@ -12,7 +11,6 @@ function Product({product, setCart, cart}){
 
                 if(item.id === product.id){
                     item.quantity = item.quantity + 1;
-                    // console.log(item)
                 } 
                 return item;
 
@@ -22,19 +20,11 @@ function Product({product, setCart, cart}){
         } else {
             const newProduct = {...product, quantity: 1}
             setCart((oldValues) => [...oldValues, newProduct])
-            console.log(cart)
 
         }
 
-
     }
-
-    // useEffect(() => {
-    //     console.log(cart)
-    // },[cart])
-
-    
-    
+  
     return (
         <Li>
             

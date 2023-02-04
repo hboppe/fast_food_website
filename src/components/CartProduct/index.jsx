@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import Li from "./style";
 
 function CartProduct({product, setCart, cart}){
