@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Aside = styled.aside`
     border-radius: 8px;
     min-width: 316px;
-    max-width: 465px;
+    max-width: 430px;
     width: 90%;
     margin: 1rem auto;
 
