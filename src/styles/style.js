@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Main = styled.main`
-    margin: 1rem;
+    padding: 1rem;
 
     @media (min-width: 1200px){
         display: flex;

@@ -60,7 +60,22 @@ const Li = styled.li`
 
     .quantityAndRemoveContainer {
         display: flex;
-        gap: 40px;
+        /* gap: 40px; */
+    }
+
+    @media (max-width: 600px){
+        .quantityAndRemoveContainer{
+            flex-direction: column;
+            justify-content: space-around;
+            height: 100%;
+        }
+    }
+
+    @media (min-width: 600px){
+        .quantityAndRemoveContainer{
+            flex-direction: row;
+            gap: 40px;
+        }
     }
 
        

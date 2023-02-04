@@ -13,7 +13,6 @@ const Input = styled.input`
 const Div = styled.div`
     background-color: #ffffff;
     display: flex;
-    width: 382px;
     border: 2px solid var(--grey-20);
     padding: 10px;
     justify-content: space-between;
