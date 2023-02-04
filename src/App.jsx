@@ -4,6 +4,7 @@ import { Cart } from './components/Cart';
 import Header from './components/Header'
 import ProductList from './components/ProductList'
 import Main from './styles/style';
+import {toast, ToastContainer} from 'react-toastify'
 
 
 
@@ -35,12 +36,15 @@ function App() {
 
   return (
     <div className="App">
+      
       <Header input={input} setInput={setInput}/>
 
       <Main>
-        {products !== undefined && <ProductList input={input} products={products} setCart={setCart} cart={cart}/>}
-        <Cart cart={cart} setCart={setCart}/>
+      
+        {products !== undefined && <ProductList input={input} products={products} setCart={setCart} cart={cart} />}
+        <Cart cart={cart} setCart={setCart} />
       </Main>
+      
     </div>
   )
 }
