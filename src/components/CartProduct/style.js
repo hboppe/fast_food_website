@@ -17,6 +17,7 @@ const Li = styled.li`
         width: calc(100% - 70px);
         justify-content: space-between;
         align-items: baseline;
+        gap: 1rem;
     }
 
     button.removeButton {
@@ -61,6 +62,8 @@ const Li = styled.li`
         display: flex;
         gap: 40px;
     }
+
+       
 
 `
 

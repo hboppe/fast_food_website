@@ -33,9 +33,8 @@ const Aside = styled.aside`
     }
 
     @media (min-width: 1200px){
-        width: 410px;
-        margin-top: 0;
-        margin-right: 2rem;
+        min-width: 410px;
+        margin: 0px;
     }
     
 `
