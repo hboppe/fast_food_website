@@ -4,7 +4,7 @@ import { Cart } from './components/Cart';
 import Header from './components/Header'
 import ProductList from './components/ProductList'
 import Main from './styles/style';
-import {toast, ToastContainer} from 'react-toastify'
+import { api } from './service/api';
 
 
 
@@ -18,7 +18,7 @@ function App() {
 
     (async function() {
       try{
-        const productsRequest =  await axios.get('https://hamburgueria-kenzie-json-serve.herokuapp.com/products');
+        const productsRequest =  await api.get('products');
 
         setProducts(productsRequest.data)
 
