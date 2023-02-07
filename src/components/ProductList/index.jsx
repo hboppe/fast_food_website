@@ -8,7 +8,19 @@ function ProductList({products, setCart, cart, input}){
     const [list, setList] = useState(products);
 
     useEffect(() => {
-        const filteredProducts = products.filter(product => product.name.toLowerCase().includes(input.toLowerCase()));
+        const filteredProducts = products.filter(product => {
+            const productName = product.name.toLowerCase();
+            const productCategory = product.category.toLowerCase();
+
+            if(productName.includes(input.toLowerCase())) {
+                return product;
+            } else if(productCategory.includes(input.toLowerCase())){
+                return product
+            }
+           
+        });
+        
+            
         
         setList([...filteredProducts])
     }, [input])
